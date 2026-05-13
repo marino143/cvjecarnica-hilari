@@ -1,0 +1,8 @@
+.claude/
+.netlify/
+.DS_Store
+*-old.html
+*-old.css
+*-old.js
+node_modules/
+/tmp/
