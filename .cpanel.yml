@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cvjecarn/public_html
+    - /bin/cp -R index.html main.js style.css images $DEPLOYPATH/
