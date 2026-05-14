@@ -602,4 +602,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ---- HIDE ELFSIGHT FREE-TIER BADGE ----
+  // Class names rotate, so target by elfsight.com link OR by visible text.
+  const feed = document.querySelector('.instagram-feed');
+  if (feed) {
+    const hideBadge = () => {
+      // 1) Any link pointing to elfsight.com
+      feed.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href') || '';
+        if (href.includes('elfsight.com') || href.includes('apps.elfsight')) {
+          // Climb up to 3 levels and hide the widest banner-like wrapper
+          let node = a;
+          for (let i = 0; i < 3 && node && node !== feed; i++) {
+            const r = node.getBoundingClientRect();
+            // Wrappers wider than the link itself = likely the banner row
+            if (r.width > a.getBoundingClientRect().width + 20) break;
+            node = node.parentElement;
+          }
+          (node || a).style.setProperty('display', 'none', 'important');
+        }
+      });
+      // 2) Any leaf element whose text matches the promo string
+      const re = /free\s+instagram\s+feed\s+widget/i;
+      feed.querySelectorAll('*').forEach(el => {
+        if (el.children.length === 0 && re.test(el.textContent || '')) {
+          let node = el;
+          for (let i = 0; i < 3 && node && node !== feed; i++) {
+            node.style.setProperty('display', 'none', 'important');
+            node = node.parentElement;
+          }
+        }
+      });
+    };
+    hideBadge();
+    new MutationObserver(hideBadge).observe(feed, { childList: true, subtree: true });
+  }
+
 });
