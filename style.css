@@ -1201,6 +1201,21 @@ button.btn-rose {
 .sticky-wa  { background: #25D366; }
 .sticky-btn:hover { transform: translateY(-3px); }
 
+/* Hide Elfsight free-tier promo badge inside the Instagram feed.
+   Targets every selector the widget uses for its "Free Instagram Feed widget"
+   link so the brand mark stays invisible across widget updates. */
+.instagram-feed a[href*="elfsight.com"],
+.instagram-feed a[href*="apps.elfsight"],
+.instagram-feed [class*="link-to-app"],
+.instagram-feed [class*="-promotion-"],
+.instagram-feed [class*="-branding-"],
+.instagram-feed [class*="elfsight-promo"],
+.instagram-feed [class*="powered-by"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
 /* ---- BACK TO TOP ---- */
 .back-to-top {
   position: fixed;
