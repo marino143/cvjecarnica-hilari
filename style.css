@@ -848,14 +848,9 @@ h2 {
 }
 .gallery-cta { text-align: center; }
 
-/* ---- INSTAGRAM FEED (Lightwidget) ---- */
+/* ---- INSTAGRAM FEED (Elfsight) ---- */
 .instagram-feed {
   margin-bottom: 44px;
-  border-radius: 2px;
-  overflow: hidden;
-}
-.lightwidget-widget {
-  display: block;
   min-height: 480px;
 }
 
