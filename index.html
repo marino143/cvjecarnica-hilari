@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#c9a0a0" />
 
-  <title>Cvjećarnica Hilari – Reci to cvijećem | Dostava cvijeća u Zagrebu</title>
-  <meta name="description" content="Cvjećarnica Hilari u Zagrebu – tradicija duga 30 godina. Buketi, aranžmani, flower box i dostava cvijeća. Koledinečka 4, 01/2992-047." />
-  <meta name="keywords" content="cvjećarnica zagreb, dostava cvijeća zagreb, buketi, flower box, vjenčani aranžmani, pogrebni vijenci, Koledinečka, Hilari" />
+  <title data-i18n="meta.title">Cvjećarnica Hilari – Reci to cvijećem | Dostava cvijeća u Zagrebu</title>
+  <meta name="description" data-i18n-attr="content:meta.description" content="Cvjećarnica Hilari u Zagrebu – tradicija duga 30 godina. Buketi, aranžmani, flower box i dostava cvijeća. Koledinečka 4, 01/2992-047." />
+  <meta name="keywords" content="cvjećarnica zagreb, dostava cvijeća zagreb, buketi, flower box, vjenčani aranžmani, pogrebni vijenci, Koledinečka, Hilari, florist zagreb, flower delivery zagreb" />
   <link rel="canonical" href="https://cvjecarnica-hilari.hr/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="hr_HR" />
-  <meta property="og:title" content="Cvjećarnica Hilari – Reci to cvijećem" />
-  <meta property="og:description" content="Buketi, aranžmani i flower box. Dostava cvijeća u Zagrebu. Tradicija duga 30 godina." />
+  <meta property="og:locale" content="hr_HR" id="og-locale" />
+  <meta property="og:title" data-i18n-attr="content:meta.title" content="Cvjećarnica Hilari – Reci to cvijećem" />
+  <meta property="og:description" data-i18n-attr="content:meta.description" content="Buketi, aranžmani i flower box. Dostava cvijeća u Zagrebu. Tradicija duga 30 godina." />
   <meta property="og:url" content="https://cvjecarnica-hilari.hr/" />
   <meta property="og:image" content="https://cvjecarnica-hilari.hr/images/slider1.png" />
 
@@ -64,7 +64,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <span class="topbar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 01/2992-047 &nbsp;·&nbsp; 095/5309-214</span>
-      <span class="topbar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Pon – Sub: 7:00 – 20:00</span>
+      <span class="topbar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span data-i18n="topbar.hours">Pon – Sub: 7:00 – 20:00</span></span>
       <span class="topbar-item topbar-hide-mobile"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Koledinečka 4, Zagreb</span>
     </div>
   </div>
@@ -72,55 +72,63 @@
   <!-- HEADER -->
   <header id="header">
     <div class="header-inner">
-      <a href="#hero" class="logo" aria-label="Cvjećarnica Hilari — početna">
+      <a href="#hero" class="logo" data-i18n-attr="aria-label:nav.logo-aria" aria-label="Cvjećarnica Hilari — početna">
         <img src="images/logo.png" alt="Cvjećarnica Hilari" />
       </a>
-      <nav id="nav" aria-label="Glavna navigacija">
-        <a href="#cvijece">O Cvijeću</a>
-        <a href="#o-nama">O Nama</a>
-        <a href="#ponuda">Ponuda</a>
-        <a href="#galerija">Galerija</a>
-        <a href="#recenzije">Recenzije</a>
-        <a href="#kontakt">Kontakt</a>
+      <nav id="nav" data-i18n-attr="aria-label:nav.aria" aria-label="Glavna navigacija">
+        <a href="#cvijece" data-i18n="nav.flowers">O Cvijeću</a>
+        <a href="#o-nama" data-i18n="nav.about">O Nama</a>
+        <a href="#ponuda" data-i18n="nav.offer">Ponuda</a>
+        <a href="#galerija" data-i18n="nav.gallery">Galerija</a>
+        <a href="#recenzije" data-i18n="nav.reviews">Recenzije</a>
+        <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+        <div class="lang-switch lang-switch-mobile" role="group" aria-label="Language">
+          <button class="lang-btn" data-lang="hr" type="button">HR</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+        </div>
       </nav>
-      <a href="tel:+38512992047" class="header-cta">Nazovi</a>
-      <button class="hamburger" id="hamburger" aria-label="Izbornik" aria-expanded="false">
+      <div class="lang-switch lang-switch-desktop" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="hr" type="button">HR</button>
+        <button class="lang-btn" data-lang="en" type="button">EN</button>
+      </div>
+      <a href="tel:+38512992047" class="header-cta" data-i18n="nav.cta">Nazovi</a>
+      <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu-aria" aria-label="Izbornik" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <!-- HERO SLIDER -->
-  <section id="hero" class="hero" aria-label="Naslovna">
+  <section id="hero" class="hero" data-i18n-attr="aria-label:hero.aria" aria-label="Naslovna">
     <div class="slides">
       <div class="slide active" style="background-image:url('images/slider1.png')"></div>
       <div class="slide" style="background-image:url('images/slider2.jpg')"></div>
       <div class="slide" style="background-image:url('images/slider3.png')"></div>
     </div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Cvjećarnica Hilari · Zagreb</p>
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">Cvjećarnica Hilari · Zagreb</p>
       <h1 class="hero-title">
-        <span class="line line-1">Reci to</span>
-        <span class="line line-2 script">cvijećem</span>
+        <span class="line line-1" data-i18n="hero.line1">Reci to</span>
+        <span class="line line-2 script" data-i18n="hero.line2">cvijećem</span>
       </h1>
-      <p class="hero-sub">Buketi, aranžmani i flower box — s ljubavlju izrađeni, s pažnjom dostavljeni.</p>
+      <p class="hero-sub" data-i18n="hero.sub">Buketi, aranžmani i flower box — s ljubavlju izrađeni, s pažnjom dostavljeni.</p>
       <div class="hero-cta-row">
-        <a href="#ponuda" class="btn-rose">Pogledaj ponudu</a>
-        <a href="#kontakt" class="btn-ghost">Kontaktiraj nas</a>
+        <a href="#ponuda" class="btn-rose" data-i18n="hero.cta1">Pogledaj ponudu</a>
+        <a href="#kontakt" class="btn-ghost" data-i18n="hero.cta2">Kontaktiraj nas</a>
       </div>
     </div>
-    <button class="slider-btn prev" id="prev" aria-label="Prethodna slika">
+    <button class="slider-btn prev" id="prev" data-i18n-attr="aria-label:slider.prev" aria-label="Prethodna slika">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <button class="slider-btn next" id="next" aria-label="Sljedeća slika">
+    <button class="slider-btn next" id="next" data-i18n-attr="aria-label:slider.next" aria-label="Sljedeća slika">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
-    <div class="dots" id="dots" role="tablist" aria-label="Slajdovi">
-      <button class="dot active" role="tab" aria-label="Slajd 1"></button>
-      <button class="dot" role="tab" aria-label="Slajd 2"></button>
-      <button class="dot" role="tab" aria-label="Slajd 3"></button>
+    <div class="dots" id="dots" role="tablist" data-i18n-attr="aria-label:slider.dots" aria-label="Slajdovi">
+      <button class="dot active" role="tab" data-i18n-attr="aria-label:slider.slide1" aria-label="Slajd 1"></button>
+      <button class="dot" role="tab" data-i18n-attr="aria-label:slider.slide2" aria-label="Slajd 2"></button>
+      <button class="dot" role="tab" data-i18n-attr="aria-label:slider.slide3" aria-label="Slajd 3"></button>
     </div>
-    <a href="#prednosti" class="scroll-hint" aria-label="Pomakni dolje">
+    <a href="#prednosti" class="scroll-hint" data-i18n-attr="aria-label:scroll.hint" aria-label="Pomakni dolje">
       <span></span>
     </a>
   </section>
@@ -129,8 +137,8 @@
   <section id="prednosti" class="prednosti reveal">
     <div class="container">
       <div class="section-head">
-        <p class="pre-title script">Prednosti</p>
-        <h2>Po čemu se razlikujemo</h2>
+        <p class="pre-title script" data-i18n="prednosti.pre">Prednosti</p>
+        <h2 data-i18n="prednosti.title">Po čemu se razlikujemo</h2>
         <div class="ornament" aria-hidden="true"></div>
       </div>
       <div class="cards-3">
@@ -144,8 +152,8 @@
               <path d="M22 50h20"/>
             </svg>
           </div>
-          <h3>Kvaliteta i svježina</h3>
-          <p>Svako stabljiku biramo sami — samo svježe i pažljivo aranžirano cvijeće.</p>
+          <h3 data-i18n="prednosti.f1.h">Kvaliteta i svježina</h3>
+          <p data-i18n="prednosti.f1.p">Svaku stabljiku biramo sami — samo svježe i pažljivo aranžirano cvijeće.</p>
         </div>
         <div class="card-feature">
           <div class="feature-icon">
@@ -157,8 +165,8 @@
               <path d="M22 48h22"/>
             </svg>
           </div>
-          <h3>Dostava u Zagrebu</h3>
-          <p>Brza i sigurna dostava istog dana na području Zagreba i okolice.</p>
+          <h3 data-i18n="prednosti.f2.h">Dostava u Zagrebu</h3>
+          <p data-i18n="prednosti.f2.p">Brza i sigurna dostava istog dana na području Zagreba i okolice.</p>
         </div>
         <div class="card-feature">
           <div class="feature-icon">
@@ -169,8 +177,8 @@
               <path d="M32 20v12"/>
             </svg>
           </div>
-          <h3>30 godina tradicije</h3>
-          <p>Tri desetljeća iskustva, stalni klijenti i preporuke — naš najbolji jamac.</p>
+          <h3 data-i18n="prednosti.f3.h">30 godina tradicije</h3>
+          <p data-i18n="prednosti.f3.p">Tri desetljeća iskustva, stalni klijenti i preporuke — naš najbolji jamac.</p>
         </div>
       </div>
     </div>
@@ -195,36 +203,36 @@
   <section id="cvijece" class="blog-section reveal">
     <div class="container">
       <div class="section-head">
-        <p class="pre-title script">O cvijeću</p>
-        <h2>Saznajte više o vašem i našem cvijeću</h2>
+        <p class="pre-title script" data-i18n="blog.pre">O cvijeću</p>
+        <h2 data-i18n="blog.title">Saznajte više o vašem i našem cvijeću</h2>
         <div class="ornament" aria-hidden="true"></div>
       </div>
       <div class="cards-3 blog-cards">
         <article class="blog-card">
-          <div class="blog-img" style="background-image:url('images/simbolika-blog.jpg')" role="img" aria-label="Simbolika cvijeća"></div>
+          <div class="blog-img" style="background-image:url('images/simbolika-blog.jpg')" role="img" data-i18n-attr="aria-label:blog.h1" aria-label="Simbolika cvijeća"></div>
           <div class="blog-body">
-            <p class="blog-tag">Simbolika</p>
-            <h3>Simbolika cvijeća i boja</h3>
-            <p>Svaki cvijet nosi svoju priču i poruku. Saznajte što znače boje i vrste cvijeća kada ih poklanjate voljenoj osobi.</p>
-            <a href="blog/simbolika.html" class="read-more">Pročitajte više <span>→</span></a>
+            <p class="blog-tag" data-i18n="blog.tag1">Simbolika</p>
+            <h3 data-i18n="blog.h1">Simbolika cvijeća i boja</h3>
+            <p data-i18n="blog.p1">Svaki cvijet nosi svoju priču i poruku. Saznajte što znače boje i vrste cvijeća kada ih poklanjate voljenoj osobi.</p>
+            <a href="blog/simbolika.html" class="read-more"><span data-i18n="blog.read-more">Pročitajte više</span> <span>→</span></a>
           </div>
         </article>
         <article class="blog-card">
-          <div class="blog-img" style="background-image:url('images/rezano-blog.jpg')" role="img" aria-label="Održavanje rezanog cvijeća"></div>
+          <div class="blog-img" style="background-image:url('images/rezano-blog.jpg')" role="img" data-i18n-attr="aria-label:blog.h2" aria-label="Održavanje rezanog cvijeća"></div>
           <div class="blog-body">
-            <p class="blog-tag">Savjeti</p>
-            <h3>Održavanje rezanog cvijeća</h3>
-            <p>Naučite kako produžiti vijek trajanja svog rezanog cvijeća i zadržati njegovu svježinu i ljepotu što duže.</p>
-            <a href="blog/rezano.html" class="read-more">Pročitajte više <span>→</span></a>
+            <p class="blog-tag" data-i18n="blog.tag2">Savjeti</p>
+            <h3 data-i18n="blog.h2">Održavanje rezanog cvijeća</h3>
+            <p data-i18n="blog.p2">Naučite kako produžiti vijek trajanja svog rezanog cvijeća i zadržati njegovu svježinu i ljepotu što duže.</p>
+            <a href="blog/rezano.html" class="read-more"><span data-i18n="blog.read-more">Pročitajte više</span> <span>→</span></a>
           </div>
         </article>
         <article class="blog-card">
-          <div class="blog-img" style="background-image:url('images/dostava-blog.jpg')" role="img" aria-label="Dostava cvijeća"></div>
+          <div class="blog-img" style="background-image:url('images/dostava-blog.jpg')" role="img" data-i18n-attr="aria-label:blog.h3" aria-label="Dostava cvijeća"></div>
           <div class="blog-body">
-            <p class="blog-tag">Dostava</p>
-            <h3>Dostava cvijeća u Zagrebu</h3>
-            <p>Narudžba i dostava nikad nije bila jednostavnija. Saznajte kako funkcionira naša usluga dostave u Zagrebu i okolici.</p>
-            <a href="blog/dostava.html" class="read-more">Pročitajte više <span>→</span></a>
+            <p class="blog-tag" data-i18n="blog.tag3">Dostava</p>
+            <h3 data-i18n="blog.h3">Dostava cvijeća u Zagrebu</h3>
+            <p data-i18n="blog.p3">Narudžba i dostava nikad nije bila jednostavnija. Saznajte kako funkcionira naša usluga dostave u Zagrebu i okolici.</p>
+            <a href="blog/dostava.html" class="read-more"><span data-i18n="blog.read-more">Pročitajte više</span> <span>→</span></a>
           </div>
         </article>
       </div>
@@ -236,24 +244,24 @@
     <div class="container">
       <div class="o-nama-inner">
         <div class="o-nama-img">
-          <img src="images/o-nama.jpg" alt="Unutrašnjost cvjećarnice Hilari" loading="lazy" />
+          <img src="images/o-nama.jpg" data-i18n-attr="alt:about.img-alt" alt="Unutrašnjost cvjećarnice Hilari" loading="lazy" />
           <div class="badge-circle">
             <span class="badge-years">30</span>
-            <span class="badge-label">godina<br/>tradicije</span>
+            <span class="badge-label" data-i18n="about.badge">godina<br/>tradicije</span>
           </div>
         </div>
         <div class="o-nama-text">
-          <p class="pre-title script">O nama</p>
-          <h2>Cvjećarnica Hilari</h2>
-          <p class="lead-text">Tradicija duga 30 godina svakako je najbolja preporuka naše cvjećarnice.</p>
-          <p>Razlog tome je vrhunski profesionalizam i posebnost naših usluga, jer bez toga ne bismo opstali toliko dugo. Kvalitetu čine kreativnost te spoj tradicije i modernizma u skladu sa svjetskim trendovima.</p>
-          <p>Svaki buket, svaki aranžman i svaki flower box izrađujemo s pažnjom — kao da je za nas same. Jer kad vi poklanjate cvijeće, vi poklanjate emocije.</p>
+          <p class="pre-title script" data-i18n="about.pre">O nama</p>
+          <h2 data-i18n="about.title">Cvjećarnica Hilari</h2>
+          <p class="lead-text" data-i18n="about.lead">Tradicija duga 30 godina svakako je najbolja preporuka naše cvjećarnice.</p>
+          <p data-i18n="about.p1">Razlog tome je vrhunski profesionalizam i posebnost naših usluga, jer bez toga ne bismo opstali toliko dugo. Kvalitetu čine kreativnost te spoj tradicije i modernizma u skladu sa svjetskim trendovima.</p>
+          <p data-i18n="about.p2">Svaki buket, svaki aranžman i svaki flower box izrađujemo s pažnjom — kao da je za nas same. Jer kad vi poklanjate cvijeće, vi poklanjate emocije.</p>
           <div class="stats-row">
-            <div class="stat"><span class="stat-num">30+</span><span class="stat-lbl">godina rada</span></div>
-            <div class="stat"><span class="stat-num">10k+</span><span class="stat-lbl">zadovoljnih klijenata</span></div>
-            <div class="stat"><span class="stat-num">5★</span><span class="stat-lbl">prosječna ocjena</span></div>
+            <div class="stat"><span class="stat-num">30+</span><span class="stat-lbl" data-i18n="about.stat1">godina rada</span></div>
+            <div class="stat"><span class="stat-num">10k+</span><span class="stat-lbl" data-i18n="about.stat2">zadovoljnih klijenata</span></div>
+            <div class="stat"><span class="stat-num">5★</span><span class="stat-lbl" data-i18n="about.stat3">prosječna ocjena</span></div>
           </div>
-          <a href="#kontakt" class="btn-rose">Kontaktirajte nas</a>
+          <a href="#kontakt" class="btn-rose" data-i18n="about.cta">Kontaktirajte nas</a>
         </div>
       </div>
     </div>
@@ -264,15 +272,15 @@
     <div class="section-bg-light">
       <div class="container">
         <div class="section-head">
-          <p class="pre-title script">Naša ponuda</p>
-          <h2>Istaknuti proizvodi</h2>
+          <p class="pre-title script" data-i18n="offer.pre">Naša ponuda</p>
+          <h2 data-i18n="offer.title">Istaknuti proizvodi</h2>
           <div class="ornament" aria-hidden="true"></div>
         </div>
         <div class="tabs" role="tablist">
-          <button class="tab active" data-target="aranzmani" role="tab" aria-selected="true">Aranžmani</button>
-          <button class="tab" data-target="buketi" role="tab">Buketi</button>
-          <button class="tab" data-target="flowerbox" role="tab">Flower Box</button>
-          <button class="tab" data-target="rezano" role="tab">Rezano cvijeće</button>
+          <button class="tab active" data-target="aranzmani" role="tab" aria-selected="true" data-i18n="offer.tab1">Aranžmani</button>
+          <button class="tab" data-target="buketi" role="tab" data-i18n="offer.tab2">Buketi</button>
+          <button class="tab" data-target="flowerbox" role="tab" data-i18n="offer.tab3">Flower Box</button>
+          <button class="tab" data-target="rezano" role="tab" data-i18n="offer.tab4">Rezano cvijeće</button>
         </div>
         <div class="tab-panels">
           <div class="tab-panel active" id="aranzmani" role="tabpanel">
@@ -280,25 +288,25 @@
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/aranzmani1.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Stolni aranžman</h4>
-                  <p>Elegantni stolni aranžman za posebne prilike.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.a1.h">Stolni aranžman</h4>
+                  <p data-i18n="product.a1.p">Elegantni stolni aranžman za posebne prilike.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/aranzmani2.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Vjenčani aranžman</h4>
-                  <p>Romantični aranžmani prilagođeni vašem vjenčanju.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.a2.h">Vjenčani aranžman</h4>
+                  <p data-i18n="product.a2.p">Romantični aranžmani prilagođeni vašem vjenčanju.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/aranzmani3.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Pogrebni aranžman</h4>
-                  <p>Dostojanstveni aranžmani u znak sjećanja.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.a3.h">Pogrebni aranžman</h4>
+                  <p data-i18n="product.a3.p">Dostojanstveni aranžmani u znak sjećanja.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
             </div>
@@ -308,25 +316,25 @@
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/buket1.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Romantični buket</h4>
-                  <p>Klasičan buket za izraziti najljepše emocije.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.b1.h">Romantični buket</h4>
+                  <p data-i18n="product.b1.p">Klasičan buket za izraziti najljepše emocije.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/buket2.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Proljetni buket</h4>
-                  <p>Svježe, šareno cvijeće — radost u jednom buketu.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.b2.h">Proljetni buket</h4>
+                  <p data-i18n="product.b2.p">Svježe, šareno cvijeće — radost u jednom buketu.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/buket3.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Mješani buket</h4>
-                  <p>Bogata kombinacija različitog sezonskog cvijeća.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.b3.h">Mješani buket</h4>
+                  <p data-i18n="product.b3.p">Bogata kombinacija različitog sezonskog cvijeća.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
             </div>
@@ -336,25 +344,25 @@
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/flowerbox1.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Flower Box — ruže</h4>
-                  <p>Luksuzna kutija punjena svježim ružama.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.fb1.h">Flower Box — ruže</h4>
+                  <p data-i18n="product.fb1.p">Luksuzna kutija punjena svježim ružama.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/flowerbox2.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Flower Box — mješani</h4>
-                  <p>Kombinacija različitog cvijeća u modernoj kutiji.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.fb2.h">Flower Box — mješani</h4>
+                  <p data-i18n="product.fb2.p">Kombinacija različitog cvijeća u modernoj kutiji.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/flowerbox3.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Flower Box — luksuzni</h4>
-                  <p>Premium izvedba za nezaboravne poklon prilike.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.fb3.h">Flower Box — luksuzni</h4>
+                  <p data-i18n="product.fb3.p">Premium izvedba za nezaboravne poklon prilike.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
             </div>
@@ -364,25 +372,25 @@
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/rezano1.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Ruže rezane</h4>
-                  <p>Klasika koja nikad ne izlazi iz mode.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.r1.h">Ruže rezane</h4>
+                  <p data-i18n="product.r1.p">Klasika koja nikad ne izlazi iz mode.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/rezano2.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Ljiljani rezani</h4>
-                  <p>Elegantni ljiljani s prepoznatljivim mirisom.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.r2.h">Ljiljani rezani</h4>
+                  <p data-i18n="product.r2.p">Elegantni ljiljani s prepoznatljivim mirisom.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
               <div class="product-card">
                 <div class="product-img-wrap"><div class="product-img" style="background-image:url('images/rezano3.jpg')"></div></div>
                 <div class="product-body">
-                  <h4>Sezonsko cvijeće</h4>
-                  <p>Birano cvijeće prema sezoni i raspoloživosti.</p>
-                  <a href="#kontakt" class="btn-sm">Pošalji upit <span>→</span></a>
+                  <h4 data-i18n="product.r3.h">Sezonsko cvijeće</h4>
+                  <p data-i18n="product.r3.p">Birano cvijeće prema sezoni i raspoloživosti.</p>
+                  <a href="#kontakt" class="btn-sm"><span data-i18n="product.cta">Pošalji upit</span> <span>→</span></a>
                 </div>
               </div>
             </div>
@@ -396,7 +404,7 @@
   <section id="galerija" class="galerija reveal">
     <div class="container">
       <div class="section-head">
-        <p class="pre-title script">Galerija</p>
+        <p class="pre-title script" data-i18n="gallery.pre">Galerija</p>
         <h2>#cvjecarnica_hilari</h2>
         <div class="ornament" aria-hidden="true"></div>
       </div>
@@ -408,7 +416,7 @@
       <div class="gallery-cta">
         <a href="https://www.instagram.com/cvjecarnica_hilari/" target="_blank" rel="noopener" class="btn-rose">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:8px;vertical-align:-3px"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Pratite nas na Instagramu
+          <span data-i18n="gallery.cta">Pratite nas na Instagramu</span>
         </a>
       </div>
     </div>
@@ -419,27 +427,27 @@
     <div class="section-bg-light">
       <div class="container">
         <div class="section-head">
-          <p class="pre-title script">Zadovoljni kupci</p>
-          <h2>Što drugi kažu o nama</h2>
+          <p class="pre-title script" data-i18n="reviews.pre">Zadovoljni kupci</p>
+          <h2 data-i18n="reviews.title">Što drugi kažu o nama</h2>
           <div class="ornament" aria-hidden="true"></div>
         </div>
         <div class="testimonials">
           <div class="testimonial">
             <div class="quote-mark" aria-hidden="true">"</div>
             <div class="stars">★★★★★</div>
-            <blockquote>Ljubazno osoblje, svježe cvijeće, pristupačne cijene. Buket naručen preko telefona, dva sata prije događaja. Dovoljno je bilo objasniti kojim povodom i za koga je buket. Posao odlično odrađen. Hvala ekipi.</blockquote>
+            <blockquote data-i18n="reviews.t1">Ljubazno osoblje, svježe cvijeće, pristupačne cijene. Buket naručen preko telefona, dva sata prije događaja. Dovoljno je bilo objasniti kojim povodom i za koga je buket. Posao odlično odrađen. Hvala ekipi.</blockquote>
             <cite>— Josipa</cite>
           </div>
           <div class="testimonial">
             <div class="quote-mark" aria-hidden="true">"</div>
             <div class="stars">★★★★★</div>
-            <blockquote>Cvjećarnica Hilari od sad će mi biti jedini izbor za dostavu cvijeća u okolici Zagreba. Kako živim u inozemstvu, odlučila sam poslati cvijeće prijateljici za rođendan. U istom danu su izvršili dostavu i cvijeće je bilo prekrasno!</blockquote>
+            <blockquote data-i18n="reviews.t2">Cvjećarnica Hilari od sad će mi biti jedini izbor za dostavu cvijeća u okolici Zagreba. Kako živim u inozemstvu, odlučila sam poslati cvijeće prijateljici za rođendan. U istom danu su izvršili dostavu i cvijeće je bilo prekrasno!</blockquote>
             <cite>— Bruna</cite>
           </div>
           <div class="testimonial">
             <div class="quote-mark" aria-hidden="true">"</div>
             <div class="stars">★★★★★</div>
-            <blockquote>Izvrsna cvjećarnica. Narudžba je prošla bez ikakvih problema. Usluga isporuke je bila brza i kvalitetno obavljena, a moja majka je bila presretna s poklonjenim cvijećem.</blockquote>
+            <blockquote data-i18n="reviews.t3">Izvrsna cvjećarnica. Narudžba je prošla bez ikakvih problema. Usluga isporuke je bila brza i kvalitetno obavljena, a moja majka je bila presretna s poklonjenim cvijećem.</blockquote>
             <cite>— Lana</cite>
           </div>
         </div>
@@ -451,8 +459,8 @@
   <section id="kontakt" class="kontakt reveal">
     <div class="container">
       <div class="section-head">
-        <p class="pre-title script">Kontakt</p>
-        <h2>Javite nam se</h2>
+        <p class="pre-title script" data-i18n="contact.pre">Kontakt</p>
+        <h2 data-i18n="contact.title">Javite nam se</h2>
         <div class="ornament" aria-hidden="true"></div>
       </div>
       <div class="kontakt-inner">
@@ -461,29 +469,29 @@
             <div class="info-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <h4>Adresa</h4>
-            <p>Koledinečka 4<br/>10000 Zagreb, Hrvatska</p>
+            <h4 data-i18n="contact.address.h">Adresa</h4>
+            <p data-i18n="contact.address.p">Koledinečka 4<br/>10000 Zagreb, Hrvatska</p>
           </div>
           <div class="info-block">
             <div class="info-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <h4>Telefon</h4>
+            <h4 data-i18n="contact.phone.h">Telefon</h4>
             <p><a href="tel:+38512992047">01/2992-047</a><br/><a href="tel:+38595309214">095/5309-214</a></p>
           </div>
           <div class="info-block">
             <div class="info-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <h4>E-mail</h4>
+            <h4 data-i18n="contact.email.h">E-mail</h4>
             <p><a href="mailto:cvjecarna.hilari@gmail.com">cvjecarna.hilari@gmail.com</a></p>
           </div>
           <div class="info-block">
             <div class="info-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h4>Radno vrijeme</h4>
-            <p>Ponedjeljak – Subota: 7:00 – 20:00<br/>Nedjelja: na upit</p>
+            <h4 data-i18n="contact.hours.h">Radno vrijeme</h4>
+            <p data-i18n="contact.hours.p">Ponedjeljak – Subota: 7:00 – 20:00<br/>Nedjelja: na upit</p>
           </div>
           <div class="social-row">
             <a href="https://www.instagram.com/cvjecarnica_hilari/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
@@ -499,47 +507,47 @@
         </div>
 
         <form class="kontakt-form" id="form" action="https://formspree.io/f/mlgzvpyz" method="POST" novalidate>
-          <p class="form-intro">Pošaljite nam upit — javit ćemo se u najkraćem mogućem roku.</p>
+          <p class="form-intro" data-i18n="form.intro">Pošaljite nam upit — javit ćemo se u najkraćem mogućem roku.</p>
           <div class="form-row">
             <div class="form-group">
-              <label for="ime">Ime i prezime <span class="req">*</span></label>
-              <input type="text" id="ime" name="ime" required placeholder="Vaše ime" />
+              <label for="ime"><span data-i18n="form.name">Ime i prezime</span> <span class="req">*</span></label>
+              <input type="text" id="ime" name="ime" required data-i18n-attr="placeholder:form.name-ph" placeholder="Vaše ime" />
             </div>
             <div class="form-group">
-              <label for="email">E-mail <span class="req">*</span></label>
-              <input type="email" id="email" name="email" required placeholder="vas@email.com" />
+              <label for="email"><span data-i18n="form.email">E-mail</span> <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required data-i18n-attr="placeholder:form.email-ph" placeholder="vas@email.com" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="telefon">Telefon</label>
-              <input type="tel" id="telefon" name="telefon" placeholder="09X XXX XXXX" />
+              <label for="telefon" data-i18n="form.phone">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" data-i18n-attr="placeholder:form.phone-ph" placeholder="09X XXX XXXX" />
             </div>
             <div class="form-group">
-              <label for="prilika">Prilika</label>
+              <label for="prilika" data-i18n="form.occasion">Prilika</label>
               <select id="prilika" name="prilika">
-                <option value="">Odaberi…</option>
-                <option>Rođendan</option>
-                <option>Vjenčanje</option>
-                <option>Godišnjica</option>
-                <option>Pogreb</option>
-                <option>Bez posebne prilike</option>
-                <option>Ostalo</option>
+                <option value="" data-i18n="form.occasion.select">Odaberi…</option>
+                <option data-i18n="form.occasion.birthday">Rođendan</option>
+                <option data-i18n="form.occasion.wedding">Vjenčanje</option>
+                <option data-i18n="form.occasion.anniversary">Godišnjica</option>
+                <option data-i18n="form.occasion.funeral">Pogreb</option>
+                <option data-i18n="form.occasion.none">Bez posebne prilike</option>
+                <option data-i18n="form.occasion.other">Ostalo</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="upit">Upit za proizvod / uslugu</label>
-            <textarea id="upit" name="upit" rows="5" placeholder="Opišite što trebate — vrsta cvijeća, boje, budžet, datum dostave…"></textarea>
+            <label for="upit" data-i18n="form.message">Upit za proizvod / uslugu</label>
+            <textarea id="upit" name="upit" rows="5" data-i18n-attr="placeholder:form.message-ph" placeholder="Opišite što trebate — vrsta cvijeća, boje, budžet, datum dostave…"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn-rose full-width">
-            <span class="btn-label">Pošalji upit</span>
+            <span class="btn-label" data-i18n="form.submit">Pošalji upit</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;vertical-align:-3px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
-          <p class="form-note">Polja označena s * su obavezna. Tvoji podaci se koriste samo za odgovor na upit.</p>
-          <div id="form-success" class="form-success" hidden>✓ Hvala! Tvoj upit je poslan — javit ćemo ti se uskoro.</div>
-          <div id="form-error" class="form-error" hidden>✗ Nešto je pošlo po zlu. Pokušaj ponovo ili nas nazovi.</div>
+          <p class="form-note" data-i18n="form.note">Polja označena s * su obavezna. Tvoji podaci se koriste samo za odgovor na upit.</p>
+          <div id="form-success" class="form-success" hidden data-i18n="form.success">✓ Hvala! Tvoj upit je poslan — javit ćemo ti se uskoro.</div>
+          <div id="form-error" class="form-error" hidden data-i18n="form.error">✗ Nešto je pošlo po zlu. Pokušaj ponovo ili nas nazovi.</div>
         </form>
       </div>
 
@@ -547,7 +555,7 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.5!2d15.99!3d45.79!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6eb59d56eb1%3A0x7b2f5c6ca0d3a8e!2sKoledinečka%204%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1700000000000"
           width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" title="Lokacija cvjećarnice Hilari">
+          referrerpolicy="no-referrer-when-downgrade" data-i18n-attr="title:contact.map-title" title="Lokacija cvjećarnice Hilari">
         </iframe>
       </div>
     </div>
@@ -559,28 +567,28 @@
       <div class="footer-grid">
         <div class="footer-col">
           <img src="images/logo.png" alt="Hilari" class="footer-logo-img" />
-          <p class="footer-tagline script">Reci to cvijećem...</p>
-          <p class="footer-about">Tradicija duga 30 godina. Buketi, aranžmani i flower box. Dostava u Zagrebu i okolici.</p>
+          <p class="footer-tagline script" data-i18n="footer.tagline">Reci to cvijećem...</p>
+          <p class="footer-about" data-i18n="footer.about">Tradicija duga 30 godina. Buketi, aranžmani i flower box. Dostava u Zagrebu i okolici.</p>
         </div>
         <div class="footer-col">
-          <h5>Stranice</h5>
+          <h5 data-i18n="footer.h.pages">Stranice</h5>
           <nav class="footer-nav">
-            <a href="#cvijece">O Cvijeću</a>
-            <a href="#o-nama">O Nama</a>
-            <a href="#ponuda">Ponuda</a>
-            <a href="#galerija">Galerija</a>
-            <a href="#recenzije">Recenzije</a>
-            <a href="#kontakt">Kontakt</a>
+            <a href="#cvijece" data-i18n="nav.flowers">O Cvijeću</a>
+            <a href="#o-nama" data-i18n="nav.about">O Nama</a>
+            <a href="#ponuda" data-i18n="nav.offer">Ponuda</a>
+            <a href="#galerija" data-i18n="nav.gallery">Galerija</a>
+            <a href="#recenzije" data-i18n="nav.reviews">Recenzije</a>
+            <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
           </nav>
         </div>
         <div class="footer-col">
-          <h5>Kontakt</h5>
+          <h5 data-i18n="footer.h.contact">Kontakt</h5>
           <p>Koledinečka 4<br/>10000 Zagreb</p>
           <p><a href="tel:+38512992047">01/2992-047</a></p>
           <p><a href="mailto:cvjecarna.hilari@gmail.com">cvjecarna.hilari@gmail.com</a></p>
         </div>
         <div class="footer-col">
-          <h5>Pratite nas</h5>
+          <h5 data-i18n="footer.h.follow">Pratite nas</h5>
           <div class="footer-social">
             <a href="https://www.instagram.com/cvjecarnica_hilari/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
@@ -589,26 +597,33 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© <span id="year">2026</span> Cvjećarnica Hilari · Sva prava pridržana</p>
+        <p>© <span id="year">2026</span> Cvjećarnica Hilari · <span data-i18n="footer.copy">Sva prava pridržana</span></p>
       </div>
     </div>
   </footer>
 
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" type="button" data-i18n-attr="aria-label:back-to-top.aria" aria-label="Natrag na vrh">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
   <!-- STICKY MOBILE CTA -->
   <div class="sticky-cta">
-    <a href="tel:+38512992047" class="sticky-btn sticky-tel" aria-label="Nazovi cvjećarnicu">
+    <a href="tel:+38512992047" class="sticky-btn sticky-tel" data-i18n-attr="aria-label:sticky.tel" aria-label="Nazovi cvjećarnicu">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     </a>
-    <a href="https://wa.me/385955309214?text=Po%C5%A1tovani%2C%20zanima%20me..." target="_blank" rel="noopener" class="sticky-btn sticky-wa" aria-label="WhatsApp poruka">
+    <a href="https://wa.me/385955309214?text=Po%C5%A1tovani%2C%20zanima%20me..." target="_blank" rel="noopener" class="sticky-btn sticky-wa" data-i18n-attr="aria-label:sticky.wa" aria-label="WhatsApp poruka">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
     </a>
   </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" hidden>
-    <button class="lb-close" id="lb-close" aria-label="Zatvori"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    <button class="lb-prev" id="lb-prev" aria-label="Prethodna"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-    <button class="lb-next" id="lb-next" aria-label="Sljedeća"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <button class="lb-close" id="lb-close" data-i18n-attr="aria-label:lightbox.close" aria-label="Zatvori"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <button class="lb-prev" id="lb-prev" data-i18n-attr="aria-label:lightbox.prev" aria-label="Prethodna"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="lb-next" id="lb-next" data-i18n-attr="aria-label:lightbox.next" aria-label="Sljedeća"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
     <img class="lb-img" id="lb-img" alt="" />
   </div>
 
