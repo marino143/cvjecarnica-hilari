@@ -13,10 +13,26 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="hr_HR" id="og-locale" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" data-i18n-attr="content:meta.title" content="Cvjećarnica Hilari – Reci to cvijećem" />
   <meta property="og:description" data-i18n-attr="content:meta.description" content="Buketi, aranžmani i flower box. Dostava cvijeća u Zagrebu. Tradicija duga 30 godina." />
   <meta property="og:url" content="https://cvjecarnica-hilari.hr/" />
   <meta property="og:image" content="https://cvjecarnica-hilari.hr/images/slider1.png" />
+  <meta property="og:site_name" content="Cvjećarnica Hilari" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" data-i18n-attr="content:meta.title" content="Cvjećarnica Hilari – Reci to cvijećem" />
+  <meta name="twitter:description" data-i18n-attr="content:meta.description" content="Buketi, aranžmani i flower box. Dostava cvijeća u Zagrebu. Tradicija duga 30 godina." />
+  <meta name="twitter:image" content="https://cvjecarnica-hilari.hr/images/slider1.png" />
+
+  <!-- hreflang for HR/EN -->
+  <link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/" />
+  <link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://cvjecarnica-hilari.hr/" />
+
+  <!-- Preload critical hero image for faster LCP -->
+  <link rel="preload" as="image" href="images/slider1.png" fetchpriority="high" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
@@ -28,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
@@ -86,8 +102,8 @@
         <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn" data-lang="hr" type="button">HR</button>
-        <button class="lang-btn" data-lang="en" type="button">EN</button>
+        <span class="lang-btn active" data-lang="hr">HR</span>
+        <a class="lang-btn" data-lang="en" href="en/" hreflang="en">EN</a>
       </div>
       <a href="tel:+38512992047" class="header-cta" data-i18n="nav.cta">Nazovi</a>
       <button class="hamburger" id="hamburger" data-i18n-attr="aria-label:nav.menu-aria" aria-label="Izbornik" aria-expanded="false">
@@ -625,6 +641,6 @@
     <img class="lb-img" id="lb-img" alt="" />
   </div>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=6"></script>
 </body>
 </html>

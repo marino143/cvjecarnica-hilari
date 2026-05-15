@@ -324,10 +324,13 @@ const I18N = {
 const SUPPORTED_LANGS = ['hr', 'en'];
 
 function detectInitialLang() {
+  // URL is authoritative now (HR root vs /en/). Only honor an explicit
+  // user preference saved from a previous click — don't auto-swap based on
+  // navigator.language, because that would translate the HR URL silently
+  // and confuse crawlers and direct visitors.
   const stored = localStorage.getItem('hilari.lang');
   if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
-  const browser = (navigator.language || 'hr').slice(0, 2).toLowerCase();
-  return SUPPORTED_LANGS.includes(browser) ? browser : 'hr';
+  return null;
 }
 
 function applyLang(lang) {
@@ -367,15 +370,30 @@ function applyLang(lang) {
   localStorage.setItem('hilari.lang', lang);
 }
 
-// Apply language ASAP (before DOMContentLoaded fires) to minimize flicker on
-// repeat visits — DOM nodes already exist by the time main.js runs at end of body.
-applyLang(detectInitialLang());
+// Apply JS i18n ONLY on pages that opted in via data-i18n attributes (HR pages),
+// AND only when the user has explicitly chosen a language via a previous click.
+// Statically-rendered /en/ pages have no data-i18n nodes and keep their own
+// lang/locale; first-time visitors keep the static HTML's language.
+const HAS_JS_I18N = !!document.querySelector('[data-i18n]');
+const INITIAL_LANG = detectInitialLang();
+if (HAS_JS_I18N && INITIAL_LANG) applyLang(INITIAL_LANG);
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- LANGUAGE SWITCHER ----
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  // Anchor-based switchers handle themselves via href; only wire up <button>
+  // elements (legacy HR pages that still toggle JS strings).
+  if (HAS_JS_I18N) {
+    document.querySelectorAll('button.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+  }
+  // Persist clicked language on anchor switchers so navigation across
+  // HR↔EN URLs remembers the user's choice for any auto-routing later.
+  document.querySelectorAll('a.lang-btn').forEach(a => {
+    a.addEventListener('click', () => {
+      try { localStorage.setItem('hilari.lang', a.dataset.lang); } catch (e) {}
+    });
   });
 
   // ---- HERO SLIDER ----
