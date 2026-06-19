@@ -880,7 +880,7 @@ h2 {
 }
 .gallery-cta { text-align: center; }
 
-/* ---- INSTAGRAM FEED (Elfsight) ---- */
+/* ---- INSTAGRAM FEED (Behold) ---- */
 .instagram-feed {
   margin-bottom: 44px;
   min-height: 480px;
@@ -1201,19 +1201,67 @@ button.btn-rose {
 .sticky-wa  { background: #25D366; }
 .sticky-btn:hover { transform: translateY(-3px); }
 
-/* Hide Elfsight free-tier promo badge inside the Instagram feed.
-   Targets every selector the widget uses for its "Free Instagram Feed widget"
-   link so the brand mark stays invisible across widget updates. */
-.instagram-feed a[href*="elfsight.com"],
-.instagram-feed a[href*="apps.elfsight"],
-.instagram-feed [class*="link-to-app"],
-.instagram-feed [class*="-promotion-"],
-.instagram-feed [class*="-branding-"],
-.instagram-feed [class*="elfsight-promo"],
-.instagram-feed [class*="powered-by"] {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
+/* ---- COOKIE CONSENT BANNER ---- */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: var(--shadow-md);
+  padding: 20px 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-text { margin: 0; }
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.cookie-btn {
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
+}
+.cookie-accept {
+  background: var(--rose-dk);
+  color: var(--white);
+}
+.cookie-accept:hover { background: var(--charcoal); }
+.cookie-decline {
+  background: transparent;
+  color: var(--charcoal-2);
+  border-color: var(--border);
+}
+.cookie-decline:hover {
+  background: var(--rose-pale);
+  border-color: var(--rose-lt);
+}
+@media (max-width: 600px) {
+  .cookie-banner {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    padding: 16px 18px;
+  }
 }
 
 /* ---- BACK TO TOP ---- */

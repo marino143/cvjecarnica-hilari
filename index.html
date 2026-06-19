@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
@@ -74,6 +74,33 @@
       "https://www.facebook.com/"
     ]
   }
+  </script>
+
+  <!-- Google Analytics 4 (property: Cvjećarnica Hilari) with Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied'
+    });
+    try {
+      if (localStorage.getItem('hilari.consent') === 'granted') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+    } catch (e) {}
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H40XGVSZZ"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-8H40XGVSZZ');
   </script>
 </head>
 <body>
@@ -423,9 +450,10 @@
         <div class="ornament" aria-hidden="true"></div>
       </div>
       <div class="instagram-feed">
-        <!-- Elfsight Instagram Feed | @cvjecarnica_hilari -->
-        <script src="https://elfsightcdn.com/platform.js" async></script>
-        <div class="elfsight-app-cd9bbc8c-14cb-46a3-a617-af83a4af8175" data-elfsight-app-lazy></div>
+        <!-- Behold.so Instagram Feed | @cvjecarnica_hilari -->
+        <!-- TODO: replace YOUR_BEHOLD_FEED_ID with the feed ID from app.behold.so -->
+        <behold-widget feed-id="YOUR_BEHOLD_FEED_ID"></behold-widget>
+        <script type="module" src="https://w.behold.so/widget.js" async></script>
       </div>
       <div class="gallery-cta">
         <a href="https://www.instagram.com/cvjecarnica_hilari/" target="_blank" rel="noopener" class="btn-rose">
@@ -641,6 +669,15 @@
     <img class="lb-img" id="lb-img" alt="" />
   </div>
 
-  <script src="main.js?v=6"></script>
+  <!-- COOKIE CONSENT BANNER -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p class="cookie-text" data-i18n="cookie.text">Koristimo Google Analytics kolačiće za anonimnu analizu posjeta. Tvoji podaci se ne dijele s trećima.</p>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Odbijam</button>
+      <button type="button" class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Prihvaćam</button>
+    </div>
+  </div>
+
+  <script src="main.js?v=7"></script>
 </body>
 </html>

@@ -159,7 +159,11 @@ const I18N = {
     'sticky.wa': 'WhatsApp poruka',
     'lightbox.close': 'Zatvori',
     'lightbox.prev': 'Prethodna',
-    'lightbox.next': 'Sljedeća'
+    'lightbox.next': 'Sljedeća',
+
+    'cookie.text': 'Koristimo Google Analytics kolačiće za anonimnu analizu posjeta. Tvoji podaci se ne dijele s trećima.',
+    'cookie.accept': 'Prihvaćam',
+    'cookie.decline': 'Odbijam'
   },
 
   en: {
@@ -317,7 +321,11 @@ const I18N = {
     'sticky.wa': 'WhatsApp message',
     'lightbox.close': 'Close',
     'lightbox.prev': 'Previous',
-    'lightbox.next': 'Next'
+    'lightbox.next': 'Next',
+
+    'cookie.text': 'We use Google Analytics cookies for anonymous traffic analysis. Your data is not shared with third parties.',
+    'cookie.accept': 'Accept',
+    'cookie.decline': 'Decline'
   }
 };
 
@@ -620,40 +628,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---- HIDE ELFSIGHT FREE-TIER BADGE ----
-  // Class names rotate, so target by elfsight.com link OR by visible text.
-  const feed = document.querySelector('.instagram-feed');
-  if (feed) {
-    const hideBadge = () => {
-      // 1) Any link pointing to elfsight.com
-      feed.querySelectorAll('a').forEach(a => {
-        const href = a.getAttribute('href') || '';
-        if (href.includes('elfsight.com') || href.includes('apps.elfsight')) {
-          // Climb up to 3 levels and hide the widest banner-like wrapper
-          let node = a;
-          for (let i = 0; i < 3 && node && node !== feed; i++) {
-            const r = node.getBoundingClientRect();
-            // Wrappers wider than the link itself = likely the banner row
-            if (r.width > a.getBoundingClientRect().width + 20) break;
-            node = node.parentElement;
-          }
-          (node || a).style.setProperty('display', 'none', 'important');
-        }
-      });
-      // 2) Any leaf element whose text matches the promo string
-      const re = /free\s+instagram\s+feed\s+widget/i;
-      feed.querySelectorAll('*').forEach(el => {
-        if (el.children.length === 0 && re.test(el.textContent || '')) {
-          let node = el;
-          for (let i = 0; i < 3 && node && node !== feed; i++) {
-            node.style.setProperty('display', 'none', 'important');
-            node = node.parentElement;
-          }
-        }
-      });
+  // ---- COOKIE CONSENT (GA4 Consent Mode v2) ----
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (cookieBanner) {
+    let consent = null;
+    try { consent = localStorage.getItem('hilari.consent'); } catch (e) {}
+    if (!consent) cookieBanner.hidden = false;
+
+    const grantConsent = () => {
+      try { localStorage.setItem('hilari.consent', 'granted'); } catch (e) {}
+      if (typeof gtag === 'function') {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        });
+      }
+      cookieBanner.hidden = true;
     };
-    hideBadge();
-    new MutationObserver(hideBadge).observe(feed, { childList: true, subtree: true });
+
+    const denyConsent = () => {
+      try { localStorage.setItem('hilari.consent', 'denied'); } catch (e) {}
+      cookieBanner.hidden = true;
+    };
+
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+    if (acceptBtn) acceptBtn.addEventListener('click', grantConsent);
+    if (declineBtn) declineBtn.addEventListener('click', denyConsent);
   }
 
 });
