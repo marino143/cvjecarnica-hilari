@@ -597,6 +597,8 @@ document.addEventListener('DOMContentLoaded', () => {
       form.reset();
       okBox?.removeAttribute('hidden');
       setTimeout(() => okBox?.setAttribute('hidden', ''), 6000);
+      // GA4 key event: a real inquiry was submitted.
+      if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'kontakt_forma' });
     } catch (err) {
       errBox?.removeAttribute('hidden');
       setTimeout(() => errBox?.setAttribute('hidden', ''), 6000);
@@ -658,5 +660,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (acceptBtn) acceptBtn.addEventListener('click', grantConsent);
     if (declineBtn) declineBtn.addEventListener('click', denyConsent);
   }
+
+  // ---- GA4 CONVERSION TRACKING (key events: phone, WhatsApp, lead) ----
+  // Fires named gtag events so GA4 can measure real inquiries, not just visits.
+  // Consent-aware: gtag holds these until consent is granted (Consent Mode v2).
+  window.trackEvent = function (name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  };
+
+  // Phone (tel:) and WhatsApp (wa.me) clicks — delegated so it covers header,
+  // contact section, footer and the sticky buttons in one place.
+  document.addEventListener('click', (e) => {
+    const tel = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (tel) {
+      window.trackEvent('phone_click', {
+        link_url: tel.getAttribute('href'),
+        link_text: (tel.textContent || '').trim() || 'tel'
+      });
+      return;
+    }
+    const wa = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp"]');
+    if (wa) {
+      window.trackEvent('whatsapp_click', { link_url: wa.getAttribute('href') });
+    }
+  });
 
 });
