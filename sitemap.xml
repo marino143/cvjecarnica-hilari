@@ -4,76 +4,125 @@
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cvjecarnica-hilari.hr/" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/en/</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cvjecarnica-hilari.hr/" />
+  </url>
+
+  <url>
+    <loc>https://cvjecarnica-hilari.hr/de/</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cvjecarnica-hilari.hr/" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/blog/simbolika.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/simbolika.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/symbolism.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/symbolik.html" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/blog/rezano.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/rezano.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/cut-flowers-care.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/schnittblumen-pflege.html" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/blog/dostava.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/dostava.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/delivery.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/blumenlieferung.html" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/en/blog/symbolism.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/simbolika.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/symbolism.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/symbolik.html" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/en/blog/cut-flowers-care.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/rezano.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/cut-flowers-care.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/schnittblumen-pflege.html" />
   </url>
 
   <url>
     <loc>https://cvjecarnica-hilari.hr/en/blog/delivery.html</loc>
-    <lastmod>2026-05-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/dostava.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/delivery.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/blumenlieferung.html" />
+  </url>
+
+  <url>
+    <loc>https://cvjecarnica-hilari.hr/de/blog/symbolik.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/simbolika.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/symbolism.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/symbolik.html" />
+  </url>
+
+  <url>
+    <loc>https://cvjecarnica-hilari.hr/de/blog/schnittblumen-pflege.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/rezano.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/cut-flowers-care.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/schnittblumen-pflege.html" />
+  </url>
+
+  <url>
+    <loc>https://cvjecarnica-hilari.hr/de/blog/blumenlieferung.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/dostava.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cvjecarnica-hilari.hr/en/blog/delivery.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cvjecarnica-hilari.hr/de/blog/blumenlieferung.html" />
   </url>
 
 </urlset>

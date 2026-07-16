@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cvjecarn/public_html
-    - /bin/cp -R index.html main.js style.css images blog en sitemap.xml robots.txt $DEPLOYPATH/
+    - /bin/cp -R index.html main.js style.css images blog en de sitemap.xml robots.txt $DEPLOYPATH/
