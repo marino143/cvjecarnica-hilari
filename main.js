@@ -153,6 +153,7 @@ const I18N = {
     'footer.h.contact': 'Kontakt',
     'footer.h.follow': 'Pratite nas',
     'footer.copy': 'Sva prava pridržana',
+    'footer.credit': 'Izrada web stranice: <a href="https://codigit.hr" target="_blank" rel="noopener">Co Digit</a>',
 
     'back-to-top.aria': 'Natrag na vrh',
     'sticky.tel': 'Nazovi cvjećarnicu',
@@ -315,6 +316,7 @@ const I18N = {
     'footer.h.contact': 'Contact',
     'footer.h.follow': 'Follow us',
     'footer.copy': 'All rights reserved',
+    'footer.credit': 'Website by <a href="https://codigit.hr" target="_blank" rel="noopener">Co Digit</a>',
 
     'back-to-top.aria': 'Back to top',
     'sticky.tel': 'Call the florist',

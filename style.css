@@ -1176,6 +1176,22 @@ button.btn-rose {
   color: rgba(255,255,255,.4);
 }
 
+.footer-bottom .footer-credit {
+  margin-top: 6px;
+}
+
+.footer-bottom .footer-credit a {
+  color: rgba(255,255,255,.55);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.footer-bottom .footer-credit a:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.6);
+}
+
 /* ---- STICKY MOBILE CTA ---- */
 .sticky-cta {
   position: fixed;
