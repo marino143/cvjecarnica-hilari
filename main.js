@@ -57,6 +57,9 @@ const I18N = {
     'blog.tag3': 'Dostava',
     'blog.h3': 'Dostava cvijeća u Zagrebu',
     'blog.p3': 'Narudžba i dostava nikad nije bila jednostavnija. Saznajte kako funkcionira naša usluga dostave u Zagrebu i okolici.',
+    'blog.tag4': 'Prigode',
+    'blog.h4': 'Cvijeće za početak škole',
+    'blog.p4': 'Buket za učiteljicu prvi dan škole — koliko velik, što odabrati i kako organizirati zajednički dar razreda uz dostavu u školu.',
     'blog.read-more': 'Pročitajte više',
 
     'about.pre': 'O nama',
@@ -220,6 +223,9 @@ const I18N = {
     'blog.tag3': 'Delivery',
     'blog.h3': 'Flower delivery in Zagreb',
     'blog.p3': 'Ordering and delivery has never been easier. Find out how our delivery service works in Zagreb and the surrounding area.',
+    'blog.tag4': 'Occasions',
+    'blog.h4': 'Flowers for the start of school',
+    'blog.p4': 'A bouquet for the teacher on the first day of school — what size, what to choose, and how to organise a class gift with delivery to the school. (Article in Croatian.)',
     'blog.read-more': 'Read more',
 
     'about.pre': 'About us',
