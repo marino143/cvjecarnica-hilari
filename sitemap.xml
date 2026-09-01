@@ -66,6 +66,15 @@
   </url>
 
   <url>
+    <loc>https://cvjecarnica-hilari.hr/blog/cvijece-za-skolu.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://cvjecarnica-hilari.hr/blog/cvijece-za-skolu.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cvjecarnica-hilari.hr/blog/cvijece-za-skolu.html" />
+  </url>
+
+  <url>
     <loc>https://cvjecarnica-hilari.hr/en/blog/symbolism.html</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>yearly</changefreq>
