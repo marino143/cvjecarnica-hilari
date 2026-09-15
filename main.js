@@ -60,7 +60,7 @@ const I18N = {
     'blog.tag4': 'Prigode',
     'blog.h4': 'Cvijeće za početak škole',
     'blog.p4': 'Buket za učiteljicu prvi dan škole — koliko velik, što odabrati i kako organizirati zajednički dar razreda uz dostavu u školu.',
-    'blog.more-link': 'Pročitajte i: Dostava cvijeća u Zagrebu',
+    'blog.more-link': 'Pročitajte i: Cvijeće za početak škole',
     'blog.read-more': 'Pročitajte više',
 
     'about.pre': 'O nama',
@@ -227,7 +227,7 @@ const I18N = {
     'blog.tag4': 'Occasions',
     'blog.h4': 'Flowers for the start of school',
     'blog.p4': 'A bouquet for the teacher on the first day of school — what size, what to choose, and how to organise a class gift with delivery to the school. (Article in Croatian.)',
-    'blog.more-link': 'Read also: Flower delivery in Zagreb',
+    'blog.more-link': 'Read also: Flowers for the start of school',
     'blog.read-more': 'Read more',
 
     'about.pre': 'About us',
