@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2e2828">
+  <title>Hilari demo admin</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#admin-main">Preskoči na sadržaj</a>
+  <div class="demo-ribbon" role="note">
+    <strong>Demo admin</strong>
+    <span>Promjene su spremljene samo u ovom pregledniku.</span>
+  </div>
+  <header class="admin-header">
+    <a class="brand" href="index.html" aria-label="Povratak u Hilari webshop">
+      <img src="assets/logo.png" alt="Cvjećarnica Hilari">
+    </a>
+    <div class="admin-header-actions">
+      <a href="index.html">Otvori webshop</a>
+      <button class="primary-action compact" type="button" id="add-product">Dodaj proizvod</button>
+    </div>
+  </header>
+
+  <main class="admin-shell" id="admin-main">
+    <section class="admin-intro">
+      <div>
+        <p class="eyebrow">Upravljanje ponudom</p>
+        <h1>Proizvodi</h1>
+        <p>Dodajte proizvod, promijenite cijenu ili ga privremeno sakrijte iz webshopa.</p>
+      </div>
+      <div class="admin-stats" aria-label="Sažetak kataloga">
+        <div><strong id="stat-all">0</strong><span>ukupno</span></div>
+        <div><strong id="stat-live">0</strong><span>dostupno</span></div>
+        <div><strong id="stat-hidden">0</strong><span>skriveno</span></div>
+      </div>
+    </section>
+
+    <section class="admin-panel" aria-labelledby="products-heading">
+      <div class="admin-toolbar">
+        <h2 id="products-heading">Katalog</h2>
+        <label class="admin-search"><span>Pretraži</span><input id="admin-search" type="search" placeholder="Naziv proizvoda"></label>
+      </div>
+      <div class="status-panel" id="admin-loading" role="status">Učitavanje kataloga...</div>
+      <div class="status-panel error" id="admin-error" hidden>
+        <strong>Katalog se ne može učitati.</strong>
+        <button id="admin-retry" type="button">Pokušaj ponovno</button>
+      </div>
+      <div class="status-panel" id="admin-empty" hidden>
+        <strong>Još nema proizvoda.</strong>
+        <button type="button" data-add-product>Dodaj prvi proizvod</button>
+      </div>
+      <div class="admin-product-list" id="admin-product-list" aria-live="polite"></div>
+    </section>
+
+    <section class="admin-utilities" aria-labelledby="utility-heading">
+      <div><h2 id="utility-heading">Demo alati</h2><p>Izvezite trenutačni katalog ili vratite početne ogledne proizvode.</p></div>
+      <div><button type="button" id="export-products">Izvezi JSON</button><button class="danger-text" type="button" id="reset-products">Vrati početne proizvode</button></div>
+    </section>
+  </main>
+
+  <dialog class="editor-dialog" id="editor-dialog">
+    <form id="product-form">
+      <div class="dialog-heading">
+        <div><p class="eyebrow">Uređivanje kataloga</p><h2 id="editor-title">Novi proizvod</h2></div>
+        <button class="icon-button dialog-close" type="button" data-close-editor aria-label="Zatvori uređivanje">×</button>
+      </div>
+      <input type="hidden" name="id">
+      <div class="editor-grid">
+        <div class="image-editor">
+          <img id="image-preview" src="assets/buket1.jpg" alt="Pregled fotografije proizvoda">
+          <label class="file-action"><span>Odaberi fotografiju</span><input id="image-file" type="file" accept="image/jpeg,image/png,image/webp"></label>
+          <input type="hidden" name="image" value="assets/buket1.jpg">
+          <small>U demou se slika smanjuje i sprema u ovaj preglednik.</small>
+        </div>
+        <div class="editor-fields">
+          <label><span>Naziv proizvoda</span><input name="name" required maxlength="70"></label>
+          <label><span>Opis</span><textarea name="description" rows="4" required maxlength="240"></textarea></label>
+          <div class="field-row">
+            <label><span>Cijena u eurima</span><input name="price" type="number" min="0" step="0.01" required></label>
+            <label><span>Kategorija</span><select name="category"><option>Buketi</option><option>Flower box</option><option>Aranžmani</option><option>Ostalo</option></select></label>
+          </div>
+          <label class="toggle-row"><input name="available" type="checkbox" checked><span>Proizvod je dostupan za narudžbu</span></label>
+        </div>
+      </div>
+      <div class="editor-actions">
+        <button type="button" data-close-editor>Odustani</button>
+        <button class="primary-action compact" type="submit">Spremi proizvod</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

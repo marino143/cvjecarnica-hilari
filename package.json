@@ -1,0 +1,10 @@
+{
+  "name": "hilari-webshop-demo",
+  "private": true,
+  "scripts": {
+    "test": "playwright test demo/tests/shop.spec.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
