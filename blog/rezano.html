@@ -65,37 +65,9 @@
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css?v=7" />
+  <link rel="stylesheet" href="../style.css?v=8" />
 
-  <!-- Google Analytics 4 (property: Cvjećarnica Hilari) with Consent Mode v2 -->
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: 'denied'
-  });
-  try {
-    if (localStorage.getItem('hilari.consent') === 'granted') {
-      gtag('consent', 'update', {
-        ad_storage: 'granted',
-        ad_user_data: 'granted',
-        ad_personalization: 'granted',
-        analytics_storage: 'granted'
-      });
-    }
-  } catch (e) {}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H40XGVSZZ"></script>
-  <script>
-  gtag('js', new Date());
-  gtag('config', 'G-8H40XGVSZZ');
-  </script>
+  <!-- Analytics is loaded only by the shared consent controller. -->
 </head>
 <body>
 
@@ -306,6 +278,7 @@
     </a>
   </div>
 
-  <script src="../main.js?v=11"></script>
+  <script src="../consent.js?v=1"></script>
+<script src="../main.js?v=13"></script>
 </body>
 </html>

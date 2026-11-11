@@ -42,11 +42,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
 
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
@@ -78,32 +75,7 @@
   }
   </script>
 
-  <!-- Google Analytics 4 (property: Cvjećarnica Hilari) with Consent Mode v2 -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied'
-    });
-    try {
-      if (localStorage.getItem('hilari.consent') === 'granted') {
-        gtag('consent', 'update', {
-          ad_storage: 'granted',
-          ad_user_data: 'granted',
-          ad_personalization: 'granted',
-          analytics_storage: 'granted'
-        });
-      }
-    } catch (e) {}
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H40XGVSZZ"></script>
-  <script>
-    gtag('js', new Date());
-    gtag('config', 'G-8H40XGVSZZ');
-  </script>
+  <!-- Analytics is loaded only by the shared consent controller. -->
 </head>
 <body>
 
@@ -524,7 +496,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <h4 data-i18n="contact.phone.h">Telefon</h4>
-            <p><a href="tel:+38512992047">01/2992-047</a><br/><a href="tel:+38595309214">095/5309-214</a></p>
+            <p><a href="tel:+38512992047">01/2992-047</a><br/><a href="tel:+385955309214">095/5309-214</a></p>
           </div>
           <div class="info-block">
             <div class="info-icon">
@@ -599,11 +571,7 @@
       </div>
 
       <div class="map-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.5!2d15.99!3d45.79!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d6eb59d56eb1%3A0x7b2f5c6ca0d3a8e!2sKoledinečka%204%2C%2010000%2C%20Zagreb!5e0!3m2!1shr!2shr!4v1700000000000"
-          width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade" data-i18n-attr="title:contact.map-title" title="Lokacija cvjećarnice Hilari">
-        </iframe>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Koledine%C4%8Dka+4+Zagreb" target="_blank" rel="noopener noreferrer">Otvori lokaciju na Google kartama (vanjska stranica)</a>
       </div>
     </div>
   </section>
@@ -675,15 +643,9 @@
     <img class="lb-img" id="lb-img" alt="" />
   </div>
 
-  <!-- COOKIE CONSENT BANNER -->
-  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
-    <p class="cookie-text" data-i18n="cookie.text">Koristimo Google Analytics kolačiće za anonimnu analizu posjeta. Tvoji podaci se ne dijele s trećima.</p>
-    <div class="cookie-actions">
-      <button type="button" class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Odbijam</button>
-      <button type="button" class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Prihvaćam</button>
-    </div>
-  </div>
 
-  <script src="main.js?v=11"></script>
+
+  <script src="consent.js?v=1"></script>
+  <script src="main.js?v=13"></script>
 </body>
 </html>

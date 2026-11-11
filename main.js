@@ -166,7 +166,7 @@ const I18N = {
     'lightbox.prev': 'Prethodna',
     'lightbox.next': 'Sljedeća',
 
-    'cookie.text': 'Koristimo Google Analytics kolačiće za anonimnu analizu posjeta. Tvoji podaci se ne dijele s trećima.',
+    'cookie.text': 'Google Analytics uključujemo samo uz tvoju privolu.',
     'cookie.accept': 'Prihvaćam',
     'cookie.decline': 'Odbijam'
   },
@@ -333,7 +333,7 @@ const I18N = {
     'lightbox.prev': 'Previous',
     'lightbox.next': 'Next',
 
-    'cookie.text': 'We use Google Analytics cookies for anonymous traffic analysis. Your data is not shared with third parties.',
+    'cookie.text': 'Google Analytics is enabled only with your consent.',
     'cookie.accept': 'Accept',
     'cookie.decline': 'Decline'
   }
@@ -342,12 +342,7 @@ const I18N = {
 const SUPPORTED_LANGS = ['hr', 'en'];
 
 function detectInitialLang() {
-  // URL is authoritative now (HR root vs /en/). Only honor an explicit
-  // user preference saved from a previous click — don't auto-swap based on
-  // navigator.language, because that would translate the HR URL silently
-  // and confuse crawlers and direct visitors.
-  const stored = localStorage.getItem('hilari.lang');
-  if (stored && SUPPORTED_LANGS.includes(stored)) return stored;
+  // Static language URLs must not be overwritten by a stale preference.
   return null;
 }
 
@@ -385,13 +380,10 @@ function applyLang(lang) {
     btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
   });
 
-  localStorage.setItem('hilari.lang', lang);
+  try { localStorage.setItem('hilari.lang', lang); } catch (e) {}
 }
 
-// Apply JS i18n ONLY on pages that opted in via data-i18n attributes (HR pages),
-// AND only when the user has explicitly chosen a language via a previous click.
-// Statically-rendered /en/ pages have no data-i18n nodes and keep their own
-// lang/locale; first-time visitors keep the static HTML's language.
+// Keep static page language authoritative; legacy buttons can still translate.
 const HAS_JS_I18N = !!document.querySelector('[data-i18n]');
 const INITIAL_LANG = detectInitialLang();
 if (HAS_JS_I18N && INITIAL_LANG) applyLang(INITIAL_LANG);
@@ -449,7 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  startAuto();
+  if (slides.length > 1 && dots.length === slides.length) startAuto();
 
   // ---- HEADER SCROLL ----
   const header = document.getElementById('header');
@@ -549,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lbNext?.addEventListener('click', () => moveLb(1));
   lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
   document.addEventListener('keydown', (e) => {
-    if (lb?.hidden) return;
+    if (!lb || lb.hidden) return;
     if (e.key === 'Escape')    closeLb();
     if (e.key === 'ArrowLeft') moveLb(-1);
     if (e.key === 'ArrowRight') moveLb(1);
@@ -570,14 +562,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const okBox    = document.getElementById('form-success');
   const errBox   = document.getElementById('form-error');
 
+  let submitting = false;
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (submitting) return;
     okBox?.setAttribute('hidden', '');
     errBox?.setAttribute('hidden', '');
 
     const lang  = document.documentElement.lang === 'en' ? 'en' : 'hr';
-    const dict  = I18N[lang];
+    const dict  = document.documentElement.lang === 'de' ? {
+      'form.alert': 'Bitte füllen Sie die Pflichtfelder aus (Name und E-Mail).',
+      'form.submit-loading': 'Wird gesendet…'
+    } : I18N[lang];
 
+    if (!form.reportValidity()) return;
     const ime   = form.querySelector('#ime')?.value.trim();
     const email = form.querySelector('#email')?.value.trim();
     if (!ime || !email) {
@@ -586,16 +584,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const action = form.getAttribute('action') || '';
-    // Ako nije postavljen Formspree endpoint, prikaži success bez slanja (lokalna verzija).
-    const isPlaceholder = action.includes('your-form-id') || !action.startsWith('http');
+    // Fail closed: an unconfigured endpoint must never look like a sent lead.
+    const validEndpoint = /^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(action);
 
     const btn = form.querySelector('button[type="submit"]');
     const labelEl = btn?.querySelector('.btn-label');
     const oldLabel = labelEl?.textContent;
     if (btn && labelEl) { btn.disabled = true; labelEl.textContent = dict['form.submit-loading']; }
 
+    submitting = true;
     try {
-      if (!isPlaceholder) {
+      if (!validEndpoint) throw new Error('Unconfigured form endpoint');
+      {
         const data = new FormData(form);
         const res = await fetch(action, {
           method: 'POST',
@@ -608,11 +608,12 @@ document.addEventListener('DOMContentLoaded', () => {
       okBox?.removeAttribute('hidden');
       setTimeout(() => okBox?.setAttribute('hidden', ''), 6000);
       // GA4 key event: a real inquiry was submitted.
-      if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'kontakt_forma' });
+      window.trackEvent?.('generate_lead', { method: 'kontakt_forma' });
     } catch (err) {
       errBox?.removeAttribute('hidden');
       setTimeout(() => errBox?.setAttribute('hidden', ''), 6000);
     } finally {
+      submitting = false;
       if (btn && labelEl) {
         btn.disabled = false;
         if (oldLabel) labelEl.textContent = oldLabel;
@@ -640,42 +641,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---- COOKIE CONSENT (GA4 Consent Mode v2) ----
-  const cookieBanner = document.getElementById('cookie-banner');
-  if (cookieBanner) {
-    let consent = null;
-    try { consent = localStorage.getItem('hilari.consent'); } catch (e) {}
-    if (!consent) cookieBanner.hidden = false;
-
-    const grantConsent = () => {
-      try { localStorage.setItem('hilari.consent', 'granted'); } catch (e) {}
-      if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-          ad_storage: 'granted',
-          ad_user_data: 'granted',
-          ad_personalization: 'granted',
-          analytics_storage: 'granted'
-        });
-      }
-      cookieBanner.hidden = true;
-    };
-
-    const denyConsent = () => {
-      try { localStorage.setItem('hilari.consent', 'denied'); } catch (e) {}
-      cookieBanner.hidden = true;
-    };
-
-    const acceptBtn = document.getElementById('cookie-accept');
-    const declineBtn = document.getElementById('cookie-decline');
-    if (acceptBtn) acceptBtn.addEventListener('click', grantConsent);
-    if (declineBtn) declineBtn.addEventListener('click', denyConsent);
-  }
-
-  // ---- GA4 CONVERSION TRACKING (key events: phone, WhatsApp, lead) ----
-  // Fires named gtag events so GA4 can measure real inquiries, not just visits.
-  // Consent-aware: gtag holds these until consent is granted (Consent Mode v2).
+  // Consent and parameter filtering live in the shared controller.
   window.trackEvent = function (name, params) {
-    if (typeof gtag === 'function') gtag('event', name, params || {});
+    window.hilariAnalytics?.track(name, params);
   };
 
   // Phone (tel:) and WhatsApp (wa.me) clicks — delegated so it covers header,
@@ -691,7 +659,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const wa = e.target.closest && e.target.closest('a[href*="wa.me"], a[href*="api.whatsapp"]');
     if (wa) {
-      window.trackEvent('whatsapp_click', { link_url: wa.getAttribute('href') });
+      // Never send the prefilled message/query (potential customer data) to GA4.
+      const url = new URL(wa.getAttribute('href'), window.location.href);
+      if (!['wa.me', 'api.whatsapp.com'].includes(url.hostname)) return;
+      window.trackEvent('whatsapp_click', { link_url: url.origin + url.pathname });
     }
   });
 
