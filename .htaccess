@@ -1,0 +1,14 @@
+# MAINTENANCE MODE — every page returns 503 + maintenance.html.
+# To turn off: deploy the commit that removes this block (or delete this file in cPanel File Manager).
+ErrorDocument 503 /maintenance.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} !^/maintenance\.html$
+  RewriteCond %{REQUEST_URI} !^/(fonts|images)/
+  RewriteCond %{REQUEST_URI} !^/robots\.txt$
+  RewriteRule ^ - [R=503,L]
+</IfModule>
+<IfModule mod_headers.c>
+  Header always set Retry-After "86400" "expr=%{REQUEST_STATUS} == 503"
+  Header always set Cache-Control "no-store" "expr=%{REQUEST_STATUS} == 503"
+</IfModule>

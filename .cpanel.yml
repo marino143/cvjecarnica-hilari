@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cvjecarn/public_html
-    - /bin/cp -R index.html privacy.html main.js consent.js style.css fonts images blog en de sitemap.xml robots.txt $DEPLOYPATH/
+    - if [ -f $DEPLOYPATH/.htaccess ] && [ ! -f $DEPLOYPATH/.htaccess.pre-maintenance ]; then /bin/cp $DEPLOYPATH/.htaccess $DEPLOYPATH/.htaccess.pre-maintenance; fi
+    - /bin/cp -R index.html privacy.html maintenance.html .htaccess main.js consent.js style.css fonts images blog en de sitemap.xml robots.txt $DEPLOYPATH/
