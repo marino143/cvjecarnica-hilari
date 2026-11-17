@@ -22,6 +22,7 @@ jobs:
         run: |
           set -euo pipefail
           resp=$(curl -fsS -H "Authorization: $AUTH" "https://$HOST:2083/execute/VersionControl/retrieve")
+          echo "$resp" | jq -e . > /dev/null 2>&1 || { echo "cPanel did not return JSON:"; echo "$resp" | head -c 400; exit 1; }
           root=$(echo "$resp" | jq -r '.data[] | select(.source_repository.url // "" | test("cvjecarnica-hilari")) | .repository_root' | head -n1)
           if [ -z "$root" ]; then echo "Repository not found in cPanel: $(echo "$resp" | jq -c '.errors')"; exit 1; fi
           echo "ROOT=$root" >> "$GITHUB_ENV"
